@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="ISO-8859-1" standalone="no"?>
+<workspace>
+  <batchBuild>
+    <batchDefinition>
+      <name>all</name>
+      <member>
+        <project>ke02z40m_test</project>
+        <configuration>Release</configuration>
+      </member>
+      <member>
+        <project>ke02z40m_test</project>
+        <configuration>Debug</configuration>
+      </member>
+    </batchDefinition>
+    <batchDefinition>
+      <name>Release</name>
+      <member>
+        <project>ke02z40m_test</project>
+        <configuration>Release</configuration>
+      </member>
+    </batchDefinition>
+    <batchDefinition>
+      <name>Debug</name>          
+      <member>
+        <project>ke02z40m_test</project>
+        <configuration>Debug</configuration>
+      </member>
+    </batchDefinition>
+  </batchBuild>
+  <project>
+    <path>$WS_DIR$/ke02z40m_test.ewp</path>
+  </project>
+</workspace>

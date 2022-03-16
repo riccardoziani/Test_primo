@@ -1,0 +1,327 @@
+<!DOCTYPE Project SYSTEM "http://www.slickedit.com/dtd/vse/10.0/vpj.dtd">
+<Project
+	Version="10.0"
+	VendorName="SlickEdit"
+	TemplateName="GNU C/C++"
+	WorkingDir="."
+	BuildSystem="vsbuild">
+	<Config
+		Name="Debug"
+		Type="gnuc"
+		DebugCallbackName="gdb"
+		Version="1"
+		OutputFile="%bdgpio_1_led_output.exe"
+		CompilerConfigName="Latest Version">
+		<Menu>
+			<Target
+				Name="Compile"
+				MenuCaption="&amp;Compile"
+				Dialog="_gnuc_options_form Compile"
+				CaptureOutputWith="ProcessBuffer"
+				Deletable="0"
+				OutputExts="*.o"
+				SaveOption="SaveCurrent"
+				RunFromDir="%rw">
+				<Exec CmdLine='gcc -ansi -c %xup  %defd -g -o "%bd%n%oe" %i "%f"'/>
+			</Target>
+			<Target
+				Name="Link"
+				MenuCaption="&amp;Link"
+				ShowOnMenu="Never"
+				Dialog="_gnuc_options_form Link"
+				CaptureOutputWith="ProcessBuffer"
+				Deletable="0"
+				SaveOption="SaveCurrent"
+				RunFromDir="%rw">
+				<Exec CmdLine='gcc -ansi %xup -g -o "%o" %f %libs'/>
+			</Target>
+			<Target
+				Name="Build"
+				MenuCaption="&amp;Build"
+				Dialog="_gnuc_options_form Compile"
+				CaptureOutputWith="ProcessBuffer"
+				Deletable="0"
+				SaveOption="SaveWorkspaceFiles"
+				RunFromDir="%rw">
+				<Exec CmdLine='"%(VSLICKBIN1)vsbuild" "%w" "%r" -t build'/>
+			</Target>
+			<Target
+				Name="Rebuild"
+				MenuCaption="&amp;Rebuild"
+				Dialog="_gnuc_options_form Compile"
+				CaptureOutputWith="ProcessBuffer"
+				Deletable="0"
+				SaveOption="SaveWorkspaceFiles"
+				RunFromDir="%rw">
+				<Exec CmdLine='"%(VSLICKBIN1)vsbuild" "%w" "%r" -t rebuild'/>
+			</Target>
+			<Target
+				Name="Debug"
+				MenuCaption="&amp;Debug"
+				Dialog="_gnuc_options_form Run/Debug"
+				BuildFirst="1"
+				CaptureOutputWith="ProcessBuffer"
+				Deletable="0"
+				SaveOption="SaveNone"
+				RunFromDir="%rw">
+				<Exec CmdLine='vsdebugio -prog "%o"'/>
+			</Target>
+			<Target
+				Name="Execute"
+				MenuCaption="E&amp;xecute"
+				Dialog="_gnuc_options_form Run/Debug"
+				BuildFirst="1"
+				CaptureOutputWith="ProcessBuffer"
+				Deletable="0"
+				SaveOption="SaveWorkspaceFiles"
+				RunFromDir="%rw">
+				<Exec CmdLine='"%o"'/>
+			</Target>
+			<Target
+				Name="dash"
+				MenuCaption="-"
+				Deletable="0">
+				<Exec/>
+			</Target>
+			<Target
+				Name="GNU C Options"
+				MenuCaption="GNU C &amp;Options..."
+				ShowOnMenu="HideIfNoCmdLine"
+				Deletable="0"
+				SaveOption="SaveNone">
+				<Exec
+					CmdLine="gnucoptions"
+					Type="Slick-C"/>
+			</Target>
+		</Menu>
+		<List Name="GNUC Options">
+			<Item
+				Name="LinkerOutputType"
+				Value="Executable"/>
+		</List>
+	</Config>
+	<Config
+		Name="Release"
+		Type="gnuc"
+		DebugCallbackName="gdb"
+		Version="1"
+		OutputFile="%bdgpio_1_led_output.exe"
+		CompilerConfigName="Latest Version">
+		<Menu>
+			<Target
+				Name="Compile"
+				MenuCaption="&amp;Compile"
+				Dialog="_gnuc_options_form Compile"
+				CaptureOutputWith="ProcessBuffer"
+				Deletable="0"
+				OutputExts="*.o"
+				SaveOption="SaveCurrent"
+				RunFromDir="%rw">
+				<Exec CmdLine='gcc -ansi -c %xup %defd -o "%bd%n%oe" %i "%f"'/>
+			</Target>
+			<Target
+				Name="Link"
+				MenuCaption="&amp;Link"
+				ShowOnMenu="Never"
+				Dialog="_gnuc_options_form Link"
+				CaptureOutputWith="ProcessBuffer"
+				Deletable="0"
+				SaveOption="SaveCurrent"
+				RunFromDir="%rw">
+				<Exec CmdLine='gcc -ansi %xup -o "%o" %f %libs'/>
+			</Target>
+			<Target
+				Name="Build"
+				MenuCaption="&amp;Build"
+				Dialog="_gnuc_options_form Compile"
+				CaptureOutputWith="ProcessBuffer"
+				Deletable="0"
+				SaveOption="SaveWorkspaceFiles"
+				RunFromDir="%rw">
+				<Exec CmdLine='"%(VSLICKBIN1)vsbuild" "%w" "%r" -t build'/>
+			</Target>
+			<Target
+				Name="Rebuild"
+				MenuCaption="&amp;Rebuild"
+				Dialog="_gnuc_options_form Compile"
+				CaptureOutputWith="ProcessBuffer"
+				Deletable="0"
+				SaveOption="SaveWorkspaceFiles"
+				RunFromDir="%rw">
+				<Exec CmdLine='"%(VSLICKBIN1)vsbuild" "%w" "%r" -t rebuild'/>
+			</Target>
+			<Target
+				Name="Debug"
+				MenuCaption="&amp;Debug"
+				Dialog="_gnuc_options_form Run/Debug"
+				BuildFirst="1"
+				CaptureOutputWith="ProcessBuffer"
+				Deletable="0"
+				SaveOption="SaveNone"
+				RunFromDir="%rw">
+				<Exec CmdLine='vsdebugio -prog "%o"'/>
+			</Target>
+			<Target
+				Name="Execute"
+				MenuCaption="E&amp;xecute"
+				Dialog="_gnuc_options_form Run/Debug"
+				BuildFirst="1"
+				CaptureOutputWith="ProcessBuffer"
+				Deletable="0"
+				SaveOption="SaveWorkspaceFiles"
+				RunFromDir="%rw">
+				<Exec CmdLine='"%o"'/>
+			</Target>
+			<Target
+				Name="dash"
+				MenuCaption="-"
+				Deletable="0">
+				<Exec/>
+			</Target>
+			<Target
+				Name="GNU C Options"
+				MenuCaption="GNU C &amp;Options..."
+				ShowOnMenu="HideIfNoCmdLine"
+				Deletable="0"
+				SaveOption="SaveNone">
+				<Exec
+					CmdLine="gnucoptions"
+					Type="Slick-C"/>
+			</Target>
+		</Menu>
+		<List Name="GNUC Options">
+			<Item
+				Name="LinkerOutputType"
+				Value="Executable"/>
+		</List>
+	</Config>
+	<CustomFolders>
+		<Folder
+			Name="Source Files"
+			Filters="*.c;*.C;*.cc;*.cpp;*.cp;*.cxx;*.c++;*.prg;*.pas;*.dpr;*.asm;*.s;*.bas;*.java;*.cs;*.sc;*.e;*.cob;*.html;*.rc;*.tcl;*.py;*.pl;*.d">
+		</Folder>
+		<Folder
+			Name="Header Files"
+			Filters="*.h;*.H;*.hh;*.hpp;*.hxx;*.inc;*.sh;*.cpy;*.if">
+		</Folder>
+		<Folder
+			Name="Resource Files"
+			Filters="*.ico;*.cur;*.dlg"/>
+		<Folder
+			Name="Bitmaps"
+			Filters="*.bmp"/>
+		<Folder
+			Name="Other Files"
+			Filters=""/>
+	</CustomFolders>
+	<Files AutoFolders="DirectoryView">
+		<Folder Name="board">
+			<F N="board/board.c"/>
+			<F N="board/board.h"/>
+			<F N="board/clock_config.c"/>
+			<F N="board/clock_config.h"/>
+			<F N="board/pin_mux.c"/>
+			<F N="board/pin_mux.h"/>
+		</Folder>
+		<Folder Name="CMSIS">
+			<F N="CMSIS/arm_common_tables.h"/>
+			<F N="CMSIS/arm_const_structs.h"/>
+			<F N="CMSIS/arm_math.h"/>
+			<F N="CMSIS/cmsis_armcc.h"/>
+			<F N="CMSIS/cmsis_armclang.h"/>
+			<F N="CMSIS/cmsis_compiler.h"/>
+			<F N="CMSIS/cmsis_gcc.h"/>
+			<F N="CMSIS/cmsis_version.h"/>
+			<F N="CMSIS/core_armv8mbl.h"/>
+			<F N="CMSIS/core_armv8mml.h"/>
+			<F N="CMSIS/core_cm0plus.h"/>
+			<F N="CMSIS/fsl_device_registers.h"/>
+			<F N="CMSIS/MKE02Z4.h"/>
+			<F N="CMSIS/MKE02Z4_features.h"/>
+			<F N="CMSIS/mpu_armv7.h"/>
+			<F N="CMSIS/system_MKE02Z4.c"/>
+			<F N="CMSIS/system_MKE02Z4.h"/>
+		</Folder>
+		<Folder Name="drivers">
+			<F N="drivers/fsl_acmp.c"/>
+			<F N="drivers/fsl_acmp.h"/>
+			<F N="drivers/fsl_adc.c"/>
+			<F N="drivers/fsl_adc.h"/>
+			<F N="drivers/fsl_clock.c"/>
+			<F N="drivers/fsl_clock.h"/>
+			<F N="drivers/fsl_common.c"/>
+			<F N="drivers/fsl_common.h"/>
+			<F N="drivers/fsl_ftm.c"/>
+			<F N="drivers/fsl_ftm.h"/>
+			<F N="drivers/fsl_gpio.c"/>
+			<F N="drivers/fsl_gpio.h"/>
+			<F N="drivers/fsl_i2c.c"/>
+			<F N="drivers/fsl_i2c.h"/>
+			<F N="drivers/fsl_irq.c"/>
+			<F N="drivers/fsl_irq.h"/>
+			<F N="drivers/fsl_kbi.c"/>
+			<F N="drivers/fsl_kbi.h"/>
+			<F N="drivers/fsl_pit.c"/>
+			<F N="drivers/fsl_pit.h"/>
+			<F N="drivers/fsl_port.c"/>
+			<F N="drivers/fsl_port.h"/>
+			<F N="drivers/fsl_rtc.c"/>
+			<F N="drivers/fsl_rtc.h"/>
+			<F N="drivers/fsl_spi.c"/>
+			<F N="drivers/fsl_spi.h"/>
+			<F N="drivers/fsl_tpm.c"/>
+			<F N="drivers/fsl_tpm.h"/>
+			<F N="drivers/fsl_uart.c"/>
+			<F N="drivers/fsl_uart.h"/>
+			<F N="drivers/fsl_wdog8.c"/>
+			<F N="drivers/fsl_wdog8.h"/>
+		</Folder>
+		<Folder Name="source">
+			<F N="source/autodose.c"/>
+			<F N="source/autodose.h"/>
+			<F N="source/crc.c"/>
+			<F N="source/crc.h"/>
+			<F N="source/crc_hal.c"/>
+			<F N="source/flash.c"/>
+			<F N="source/flash.h"/>
+			<F N="source/grinder.h"/>
+			<F N="source/hal.c"/>
+			<F N="source/hal.h"/>
+			<F N="source/isr.c"/>
+			<F N="source/ke02z40m_test.c"/>
+			<F N="source/micro_counter_hal.c"/>
+			<F N="source/micro_counter_hal.h"/>
+			<F N="source/nvm.c"/>
+			<F N="source/nvm.h"/>
+			<F N="source/nvm_cfg.h"/>
+			<F N="source/nvm_hal.c"/>
+			<F N="source/nvm_hal.h"/>
+			<F N="source/nvm_map.c"/>
+			<F N="source/nvm_map.h"/>
+			<F N="source/philips_types.h"/>
+			<F N="source/ric.c"/>
+			<F N="source/ric.h"/>
+			<F N="source/saeco.h"/>
+			<F N="source/template.c"/>
+			<F N="source/template.h"/>
+			<F N="source/timer.c"/>
+			<F N="source/timer.h"/>
+		</Folder>
+		<Folder Name="startup">
+			<F N="startup/startup_MKE02Z4.s"/>
+		</Folder>
+		<Folder Name="utilities">
+			<F N="utilities/fsl_assert.c"/>
+			<F N="utilities/fsl_debug_console.c"/>
+			<F N="utilities/fsl_debug_console.h"/>
+			<F N="utilities/fsl_debug_console_conf.h"/>
+			<F N="utilities/fsl_io.c"/>
+			<F N="utilities/fsl_io.h"/>
+			<F N="utilities/fsl_log.c"/>
+			<F N="utilities/fsl_log.h"/>
+			<F N="utilities/fsl_str.c"/>
+			<F N="utilities/fsl_str.h"/>
+		</Folder>
+		<F N="MKE02Z64xxx4_flash.icf"/>
+	</Files>
+</Project>
